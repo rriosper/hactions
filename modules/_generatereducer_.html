@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>&quot;generateReducer&quot; | rrios-hactions</title>
+	<meta name="description" content="Documentation for rrios-hactions">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">rrios-hactions</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_generatereducer_.html">&quot;generateReducer&quot;</a>
+				</li>
+			</ul>
+			<h1>Module &quot;generateReducer&quot;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_generatereducer_.html#generatereducer" class="tsd-kind-icon">generate<wbr>Reducer</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="generatereducer" class="tsd-anchor"></a>
+					<h3>generate<wbr>Reducer</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Reducer<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><a href="_types_.html#generatereducerprops" class="tsd-signature-type">GenerateReducerProps</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_types_.html#reducerfn" class="tsd-signature-type">ReducerFn</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/rriosper/hactions/blob/d13cbbb/src/generateReducer.ts#L50">generateReducer.ts:50</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Util to generate a reducer ease.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>props: <a href="_types_.html#generatereducerprops" class="tsd-signature-type">GenerateReducerProps</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>General props to create a reducer set that allows us to handle actions ease</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_types_.html#reducerfn" class="tsd-signature-type">ReducerFn</a></h4>
+							<ul>
+								<li>An root reducer that handle us our state</li>
+							</ul>
+							<a href="#basic-reducer" id="basic-reducer" style="color: inherit; text-decoration: none;">
+								<h1>Basic reducer</h1>
+							</a>
+							<pre><code class="language-typescript"><span class="hljs-keyword">const</span> { types, creators } = generateActions(
+ {
+   actions: [<span class="hljs-string">&#x27;toggle&#x27;</span>, <span class="hljs-string">&#x27;set&#x27;</span>],
+ }
+)
+
+
+ <span class="hljs-keyword">const</span> toggleFn = <span class="hljs-function">(<span class="hljs-params">state</span>) =&gt;</span> !state;
+ <span class="hljs-keyword">const</span> setFn = <span class="hljs-function">(<span class="hljs-params">_, { payload }</span>) =&gt;</span> payload;
+
+<span class="hljs-keyword">const</span> reducer = generateReducer(
+  {
+    initialState: { test : <span class="hljs-literal">true</span> },
+    reducers:
+       {
+         [types.toggle]: toggleFn,
+         [types.set]: setFn,
+       }
+  }
+);
+
+<span class="hljs-comment">// &lt;--- External library ---&gt;</span>
+<span class="hljs-keyword">const</span> [state, dispatch] = store(reducer);
+<span class="hljs-comment">//state === { test: true };</span>
+
+dispatch(creators.toggle());
+<span class="hljs-comment">//state === { test: false };</span>
+
+dispatch(creators.set(<span class="hljs-literal">true</span>));
+<span class="hljs-comment">// state === { test: true };</span>
+
+dispatch(creators.set(<span class="hljs-literal">true</span>));
+<span class="hljs-comment">// state === { test: true };</span></code></pre>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_generateactions_.html">&quot;generate<wbr>Actions&quot;</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="_generatereducer_.html">&quot;generate<wbr>Reducer&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_types_.html">&quot;types&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="_utils_.html">&quot;utils&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="_generatereducer_.html#generatereducer" class="tsd-kind-icon">generate<wbr>Reducer</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
